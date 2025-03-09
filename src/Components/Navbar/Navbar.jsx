@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import logo from "../../assets/logo.png";
+import { FaBars } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
 import { CoinContext } from "../../Context/CoinContext";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-
+  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -55,14 +56,15 @@ export default function Navbar() {
             <button type="button" className="text-[#002641] bg-white  border border-white hidden  focus:outline-none text-[16px] font-medium rounded-[20px] text-sm text-center md:flex gap-1 justify-center items-center px-[15px] py-[10px]">sign in <MdArrowOutward />
             </button>
           
-            <button data-collapse-toggle="navbar-sticky" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-[#5fd] rounded-lg md:hidden focus:outline-none   dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
-              <span className="sr-only">Open main menu</span>
-              <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M1 1h15M1 7h15M1 13h15" />
-              </svg>
+            <button
+             onClick={() => setMenuOpen(!menuOpen)} type="button" className="inline-flex items-center p-2 w-10 h-10 text-xl justify-center  text-[#5fd] rounded-lg md:hidden focus:outline-none   dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+              <FaBars />
             </button>
           </div>
-          <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+          <div  className={`${
+            menuOpen ? "block" : "hidden"
+          } grow gap-6 w-full mx-auto  lg:flex items-center lg:w-auto`}
+        >
             <ul className="text-white cursor-pointer flex flex-col p-4 md:p-0 mt-4 font-medium  rounded-lg  lg:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
            
             <li className="block py-2 px-3 text-[#ddd]"><NavLink to="/">Home</NavLink></li>
