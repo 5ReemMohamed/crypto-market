@@ -1,0 +1,29 @@
+@import "flowbite/src/themes/default";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+
+.app{
+    background-image: linear-gradient(to right top, #1f092c, #10193a, #002641, #003043, #003a42, #003a40, #003a3f, #003a3d, #00313c, #002839, #001f34, #08152c);
+}
+a.active{
+    color:#5fd
+}
+table{
+    background-image: linear-gradient(to right top, #061024, #001828, #001f2a, #03242a, #0e2a2a);
+}
