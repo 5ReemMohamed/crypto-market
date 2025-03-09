@@ -65,7 +65,7 @@ export default function Navbar() {
             menuOpen ? "block" : "hidden"
           } grow gap-6 w-full mx-auto  lg:flex items-center lg:w-auto`}
         >
-            <ul className="text-white cursor-pointer flex flex-col p-4 md:p-0 mt-4 font-medium  rounded-lg  lg:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
+            <ul className="text-white cursor-pointer flex flex-col mx-auto p-4 md:p-0 mt-4 font-medium  rounded-lg  lg:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
            
             <li className="block py-2 px-3 text-[#ddd]"><NavLink to="/">Home</NavLink></li>
             <li className="block py-2 px-3 text-[#ddd]">Features</li>
